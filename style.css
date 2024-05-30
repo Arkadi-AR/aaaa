@@ -1,0 +1,76 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black; /* Background color is black */
+    margin: 0;
+    color: white; /* Text color is white */
+    background-image: url('purple-wave.png'); /* Background image for the wavy effect */
+    background-size: cover;
+    animation: waveAnimation 5s infinite linear alternate-reverse;
+}
+
+.heart {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    transform: rotate(45deg);
+    animation: pulse 1s infinite;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -50px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: -50px;
+}
+
+.spacer {
+    height: 40px; /* Adjust the height for spacing */
+}
+
+.text, .subtext {
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.subtext {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1) rotate(45deg);
+    }
+    50% {
+        transform: scale(1.1) rotate(45deg);
+    }
+}
+
+@keyframes waveAnimation {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: 100%;
+    }
+}
+
